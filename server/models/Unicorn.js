@@ -44,7 +44,7 @@ class Unicorn {
   }
 
   async enchantedForest() {
-    const enchantedForestFile = await import("./EnchantedForest")
+    const enchantedForestFile = await import("./EnchantedForest.js")
     const EnchantedForest = enchantedForestFile.default
 
     try {

@@ -26,4 +26,18 @@ enchantedForestsRouter.get("/:id", async (req, res) => {
   }
 })
 
+enchantedForestsRouter.post("/", async (req, res) => {
+  try {
+    const newEnchantedForest = new EnchantedForest(req.body)
+    if (await newEnchantedForest.save()) {
+      res.status(201).json({ enchantedForest: newEnchantedForest })
+    } else {
+      res.status(422).json({ errors: newEnchantedForest.errors })
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ errors: error })
+  }
+})
+
 export default enchantedForestsRouter

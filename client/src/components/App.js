@@ -1,17 +1,25 @@
 import React from "react"
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { hot } from "react-hot-loader/root"
 
-import EnchantedForestShow from "./EnchantedForestShow"
 import EnchantedForestsList from "./EnchantedForestsList"
+import EnchantedForestForm from "./EnchantedForestForm"
+import EnchantedForestShow from "./EnchantedForestShow"
+import UnicornsList from "./UnicornsList"
+import UnicornShow from "./UnicornShow"
 
 import "../assets/main.css"
 
 const App = props => {
   return(
     <BrowserRouter>
-      <Route exact path="/enchanted-forests" component={EnchantedForestsList} />
-      <Route exact path="/enchanted-forests/:id" component={EnchantedForestShow} />
+      <Switch>
+        <Route exact path="/enchanted-forests" component={EnchantedForestsList} />
+        <Route exact path="/enchanted-forests/new" component={EnchantedForestForm} />
+        <Route exact path="/enchanted-forests/:id" component={EnchantedForestShow} /> 
+        <Route exact path="/unicorns" component={UnicornsList} />
+        <Route exact path="/unicorns/:id" component={UnicornShow} />
+      </Switch>
     </BrowserRouter>
   )
 }

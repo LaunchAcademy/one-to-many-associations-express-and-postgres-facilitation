@@ -33,7 +33,7 @@ const EnchantedForestShow = props => {
 
   return(
     <>
-      <h5><Link to="/enchanted-forests">Back to Home</Link></h5>
+      <h5><Link to="/enchanted-forests">Back to All Enchanted Forests</Link></h5>
       <h1>{enchantedForest.name}</h1>
       <h2>Unicorns:</h2>
       <ul>{enchantedForestUnicornsList}</ul>
