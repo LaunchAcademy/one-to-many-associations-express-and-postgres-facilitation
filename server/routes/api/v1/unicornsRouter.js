@@ -18,6 +18,8 @@ unicornsRouter.get("/:id", async (req, res) => {
   try {
     const unicorn = await Unicorn.findById(req.params.id)
     unicorn.enchantedForest = await unicorn.enchantedForest()
+    // console.log("unicorn")
+    // console.log(unicorn)
     
     res.status(200).json({ unicorn: unicorn })
   } catch (error) {

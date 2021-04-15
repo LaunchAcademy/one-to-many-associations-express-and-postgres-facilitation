@@ -25,14 +25,16 @@ const EnchantedForestShow = props => {
     getEnchantedForest()
   }, [])
 
-  const enchantedForestUnicornsList = enchantedForest.unicorns.map(unicorn => {
+  // debugger
+
+  const enchantedForestUnicornsList = enchantedForest.unicorns.map((unicorn) => {
     return(
       <li key={unicorn.id}>{unicorn.name}</li>
-    )
-  })
-
-  return(
-    <>
+      )
+    })
+    
+    return(
+      <>
       <h5><Link to="/enchanted-forests">Back to All Enchanted Forests</Link></h5>
       <h1>{enchantedForest.name}</h1>
       <h2>Unicorns:</h2>

@@ -92,7 +92,9 @@ class EnchantedForest {
       const result = await pool.query(query, [this.id])
 
       const relatedUnicornsData = result.rows
-      const relatedUnicorns = relatedUnicornsData.map((unicorn) => new Unicorn(unicorn))
+      const relatedUnicorns = relatedUnicornsData.map((unicorn) => {
+        return new Unicorn(unicorn)
+      })
 
       return relatedUnicorns
     } catch (error) {
